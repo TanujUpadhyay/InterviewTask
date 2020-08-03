@@ -1,5 +1,6 @@
 body {
   background-color: #f0ece3;
+  font-weight: 500;
 }
 
 .headerWrapper {
@@ -38,29 +39,50 @@ body {
   font-size: 20px;
 }
 
+.mainWrapper {
+  flex: 1;
+  flex-direction: row;
+}
+
 .optionWrapper,
 .qustionAswnsWrapper {
   background-color: white;
-  border-radius: 19px;
-  padding: 39px;
-  margin-left: 50px;
-  margin-right: 50px;
+  border-radius: 10px;
+  padding: 12px;
+  height: 100%;
+}
+
+.optionWrapper {
+  padding: 7px;
+}
+
+.optionWrapper h3 {
+  padding: 5px;
+  margin: 5px;
+}
+
+.qnaBox {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid black;
 }
 
 .boxes {
-  padding: 0px;
-  margin: 0px;
+  margin-bottom: 20px;
 }
 
 .boxes p {
   color: grey;
   font-size: small;
+  margin: 0px;
 }
 
 .boxes select {
   border: none;
-  padding: 5px 160px 10px 0px;
+  width: 100%;
+  padding-bottom: 8px;
   border-bottom: 2px solid black;
+  font-size: 14px;
 }
 
 .bttonStyle {
@@ -78,21 +100,25 @@ body {
   border: 1px solid black;
 }
 
-.qustionAswnsWrapper {
-  background-color: white;
-  margin-top: 20px;
-}
-
 .check {
-  margin-left: 96px;
-  margin-right: -53px;
+  margin-left: 45px;
+  margin-right: -39px;
+  margin-top: 10px;
 }
 
-.ansbox {
-  text-align: end;
-  padding: 5px;
-  font-size: 19px;
-  margin-right: 2px;
+.qnAns {
+  text-align: center;
+  justify-content: center;
+}
+
+.filterWrapper .ansbox {
+  text-align: start;
+  padding-bottom: 10px;
+}
+
+.ansbox input {
+  width: 16px;
+  height: 16px;
 }
 
 .mainQustion p {
@@ -101,7 +127,7 @@ body {
 
 .maksWrapper {
   text-align: end;
-  padding-top: 10px;
+  margin-top: 50px;
 }
 
 .sideIcons1 h5,
@@ -111,10 +137,6 @@ body {
 
 .sideIcons1 h5 {
   margin-right: 8px;
-}
-
-.maksWrapper .boxes select {
-  padding: 0px 63px 0px 0px;
 }
 
 .sideIcons2 {

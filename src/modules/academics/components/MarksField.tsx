@@ -8,7 +8,7 @@ function MarksFilde() {
           <h5>Marks</h5>
         </div>
 
-        <div className="col-3  sideIcons2 boxes">
+        <div className="col-4  sideIcons2 boxes">
           <p>Enter marks</p>
           <select>
             <option>01</option>

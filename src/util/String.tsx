@@ -1,13 +1,3 @@
-export const classOptions = [
-  "I  Class  ",
-  "II  Class   ",
-  "III  Class   ",
-  "Iv Class ",
-];
-export const subjectOptions = ["Maths", "English", "Hind", "computer"];
-export const topicOptions = ["Integers", "Definations", "Difrents", "langues"];
-export const complexityOptions = ["High", "Midiuk", "Low"];
-
 export const qustion1 =
   "1. The arithmetic means of th 5 consective integers starting wiith 's' is 'a. What is the arithematic means of 9 consequtive integers that works with s+22 ?";
 

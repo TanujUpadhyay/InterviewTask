@@ -1,16 +1,26 @@
 import React from "react";
 import "./App.css";
-import Header from "./components/Header";
-import Option from "./components/Option";
-import QustionAswns from "./components/QustionAswns";
-import Footer from "./components/Footer";
+
+import Footer from "./modules/academics/components/Footer";
+import Header from "./modules/academics/components/Header";
+import Filters from "./modules/academics/containers/Filters";
+import QustionAswns from "./modules/academics/containers/QustionAswns";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Option />
-      <QustionAswns />
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-2">
+            <Filters />
+          </div>
+          <div className="col-9">
+            <QustionAswns />
+          </div>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );
