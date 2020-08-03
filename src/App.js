@@ -5,11 +5,12 @@ import Footer from "./modules/academics/components/Footer";
 import Header from "./modules/academics/components/Header";
 import Filters from "./modules/academics/containers/Filters";
 import QustionAswns from "./modules/academics/containers/QustionAswns";
+import AssessmentForm from "./modules/academics/containers/AssessmentForm";
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      {/* <Header />
       <div className="container-fluid">
         <div className="row">
           <div className="col-2">
@@ -21,7 +22,8 @@ function App() {
         </div>
       </div>
 
-      <Footer />
+      <Footer /> */}
+      <AssessmentForm />
     </div>
   );
 }
