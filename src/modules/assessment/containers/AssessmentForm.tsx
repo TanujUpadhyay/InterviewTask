@@ -12,6 +12,7 @@ const AssessmentForm: FunctionComponent = () => {
     e.preventDefault();
 
     // for checking the request i try t put data dirctly
+    // only for tesing perpose for api 
     const assessment = {
       boardname: "CBSE",
       classname: "Class V",
@@ -167,6 +168,7 @@ const AssessmentForm: FunctionComponent = () => {
                     setMarks(e.target.value as number)
                   }
                 >
+                  <option value="">Select</option>
                   <option value="10">10</option>
                   <option value="20">20</option>
                   <option value="30">40</option>
