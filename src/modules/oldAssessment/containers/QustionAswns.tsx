@@ -7,7 +7,7 @@ import {
   Q1option3,
   Q1option4,
   Q2option1,
-} from "../../../util/String";
+} from "../util/String";
 
 function QustionAswns() {
   return (

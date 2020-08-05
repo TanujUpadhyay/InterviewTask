@@ -1,19 +1,10 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 
-function Filters() {
+const Filters: FunctionComponent = () => {
   return (
     <div className="containe optionWrapper">
       <h3>Filters</h3>
       <div className="col">
-        <div className="boxes">
-          <p>Class</p>
-          <select>
-            <option>CBSE, Class V, Maths</option>
-            <option>CBSE, Class V, English</option>
-            <option>CBSE, Class V, Hindi</option>
-          </select>
-        </div>
-
         <div className="boxes">
           <p>Class</p>
           <select>
@@ -78,6 +69,6 @@ function Filters() {
       </div>
     </div>
   );
-}
+};
 
 export default Filters;
