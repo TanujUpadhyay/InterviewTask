@@ -18,7 +18,7 @@ export const getQustions = async (
   return response.data;
 };
 
-export const addAssessment = async (assessment: object) => {
+export const addAssessment = async (assessment: Object) => {
   const response = await axios.put(ADD_ASSESSMENT, assessment);
   return response;
 };

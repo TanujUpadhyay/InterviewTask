@@ -1,8 +1,4 @@
 import React, { FunctionComponent, useState } from "react";
-import { addAssessment } from "../helper/api";
-import PersonWithBook from "../../../assets/svgs/person-with-book.svg";
-import { Link, Redirect } from "react-router-dom";
-import Assessment_page from "./Assessment_page";
 
 const AssessmentForm: FunctionComponent = () => {
   const [course, setCourse] = useState("");
@@ -11,64 +7,57 @@ const AssessmentForm: FunctionComponent = () => {
   const [marks, setMarks] = useState<number>();
   const [instructions, setInstructions] = useState("");
 
-  const assessmentData = {
-    boardname: course,
-    classname: course,
-    subjectname: course,
-    assessmentname: name,
+  const onFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // for checking the request i try t put data dirctly
+    // only for tesing perpose for api
+    const assessment = {
+      boardname: "CBSE",
+      classname: "Class V",
+      subjectname: "Maths",
+      assessmentname: "Assess5",
+      questions: [
+        {
+          questionDescription: "Hello2",
+          option1: "option1",
+          option2: "option2",
+          option3: "option3",
+          option4: "option4",
+          answer: "a",
+          answerDescription: "Here is the solution of this question",
+          marks: 5,
+          imageLinks: "hello.png",
+        },
+        {
+          questionDescription: "Hello3",
+          option1: "20",
+          option2: "30",
+          option3: "40",
+          option4: "50",
+          answer: "a",
+          answerDescription: "This is the solution",
+          marks: 2,
+          imageLinks: "hello.png",
+        },
+      ],
+    };
+
+    const saveAssement = async () => {
+      console.log(assessment);
+      const response = await addAssessment(assessment);
+
+      console.log(response.data);
+    };
+
+    saveAssement();
+
+    setCourse("");
+    setDuration("");
+    setName("");
+    setInstructions("");
+    setMarks(0);
   };
-
-  // const onFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-
-  //   // for checking the request i try t put data dirctly
-  //   // only for tesing perpose for api
-  //   const assessment = {
-  //     boardname: "CBSE",
-  //     classname: "Class V",
-  //     subjectname: "Maths",
-  //     assessmentname: "Assess4",
-  //     questions: [
-  //       {
-  //         questionDescription: "Hello2",
-  //         option1: "option1",
-  //         option2: "option2",
-  //         option3: "option3",
-  //         option4: "option4",
-  //         answer: "a",
-  //         answerDescription: "Here is the solution of this question",
-  //         marks: 5,
-  //         imageLinks: "hello.png",
-  //       },
-  //       {
-  //         questionDescription: "Hello3",
-  //         option1: "20",
-  //         option2: "30",
-  //         option3: "40",
-  //         option4: "50",
-  //         answer: "a",
-  //         answerDescription: "This is the solution",
-  //         marks: 2,
-  //         imageLinks: "hello.png",
-  //       },
-  //     ],
-  //   };
-
-  //   const saveAssement = async () => {
-  //     console.log(assessment);
-  //     const response = await addAssessment(assessment);
-
-  //     console.log(response.data);
-  //   };
-
-  //   saveAssement();
-
-  //   setCourse("");
-  //   setDuration("");
-  //   setName("");
-  //   setInstructions("");
-  //   setMarks(0);
-  // };
 
   const clearForm = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -79,22 +68,6 @@ const AssessmentForm: FunctionComponent = () => {
     setMarks(0);
   };
 
-  // const onClickCheck = (e: React.MouseEvent<HTMLButtonElement>) => {
-  //   e.preventDefault();
-
-  //   if (name && course && duration && marks && instructions) {
-  //     console.log("Works fine");
-
-  //     setCourse("");
-  //     setDuration("");
-  //     setName("");
-  //     setInstructions("");
-  //     setMarks(0);
-  //   } else {
-  //     console.log("missing");
-  //   }
-  // };
-
   return (
     <div className="container fromWrapper">
       <div className="row borderBottom">
@@ -102,14 +75,13 @@ const AssessmentForm: FunctionComponent = () => {
         <div className="col">
           <div className="formHeading">
             <h3>
-              <img src={PersonWithBook} alt="Person with Book" />
-              Create Assessment
+              <i className="far fa-clipboard"></i> Create Assessment
             </h3>
           </div>
         </div>
       </div>
 
-      <form>
+      <form onSubmit={onFormSubmit}>
         <div className="mainForm">
           <div className="row">
             <div className="col-3"></div>
@@ -131,7 +103,6 @@ const AssessmentForm: FunctionComponent = () => {
                   onChange={(e: React.ChangeEvent<{ value: unknown }>) =>
                     setCourse(e.target.value as string)
                   }
-                  required
                 >
                   <option value="">Select</option>
                   <option value="CBSE, Class V, Maths">
@@ -157,7 +128,6 @@ const AssessmentForm: FunctionComponent = () => {
               <div className="inputHolders">
                 <span>Enter Name</span>
                 <input
-                  required
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -175,7 +145,6 @@ const AssessmentForm: FunctionComponent = () => {
               <div className="inputHolders">
                 <span>Enter Duration(Max)</span>
                 <input
-                  required
                   type="text"
                   value={duration}
                   onChange={(e) => setDuration(e.target.value)}
@@ -193,7 +162,6 @@ const AssessmentForm: FunctionComponent = () => {
               <div className="inputHolders">
                 <span>Enter Name</span>
                 <select
-                  required
                   value={marks}
                   onChange={(e: React.ChangeEvent<{ value: unknown }>) =>
                     setMarks(e.target.value as number)
@@ -222,7 +190,6 @@ const AssessmentForm: FunctionComponent = () => {
                 <h6>2. Negative marks (available)</h6>
                 <h6>3. each Questions carries 2 marks</h6>
                 <textarea
-                  required
                   value={instructions}
                   onChange={(e) => setInstructions(e.target.value)}
                 />
@@ -241,16 +208,7 @@ const AssessmentForm: FunctionComponent = () => {
             >
               Clear
             </button>
-            <Link
-              to={{
-                pathname: "/qustions",
-                state: assessmentData,
-              }}
-            >
-              <button className="bttonStyle" type="submit">
-                Create
-              </button>
-            </Link>
+            <input className="bttonStyle" type="submit" value="Create" />
           </div>
         </div>
       </form>

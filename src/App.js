@@ -4,13 +4,14 @@ import {
   AssessmentElements,
   AssessmentForm,
 } from "./modules/assessment/containers";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <AssessmentForm />
-      <AssessmentElements />
-    </div>
+    <Router>
+      <Route exact path="/" component={AssessmentForm} />
+      <Route exact path="/qustions" component={AssessmentElements} />
+    </Router>
   );
 }
 

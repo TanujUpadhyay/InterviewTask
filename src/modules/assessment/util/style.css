@@ -223,14 +223,14 @@ body {
 }
 
 .formHeading h3 {
-  margin: 50px;
+  margin: 40px;
   font-size: 25px;
 }
 
-.formHeading i {
-  color: #f0a500;
-  font-size: 45px;
+.formHeading img {
   margin-right: 15px;
+  width: 60px;
+  height: 60px;
 }
 
 .formHeading {
@@ -250,12 +250,13 @@ body {
 .mainForm h5 {
   font-size: 24px;
   margin: 10px 50px;
+  color: darkblue;
 }
 
 .mainForm p {
   margin-left: 30px;
   font-size: 20px;
-
+  color: darkblue;
   margin-top: 40px;
 }
 
@@ -271,7 +272,8 @@ body {
 }
 
 .inputHolders input,
-.inputHolders select {
+.inputHolders select,
+.inputHolders textarea {
   border: none;
   border-bottom: 2px solid black;
   width: 100%;
@@ -286,4 +288,13 @@ body {
 
 .footerStyle .cancleButtonStyle {
   margin-right: 10px;
+}
+
+@media screen and (min-width: 100px) and (max-width: 767px) {
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1365px) {
 }
