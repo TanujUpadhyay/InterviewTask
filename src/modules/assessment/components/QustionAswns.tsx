@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import { getQustions } from "../helper/api";
 import { QustionBody } from "../contracts/qustions_interface";
-import { values } from "lodash";
 
 function MarksField() {
   return (
